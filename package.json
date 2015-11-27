@@ -38,6 +38,7 @@
     "karma-jasmine": "^0.3.6",
     "karma-sourcemap-loader": "^0.3.6",
     "karma-webpack": "^1.7.0",
+    "lodash": "^3.10.1",
     "path": "^0.12.7",
     "webpack": "^1.12.9"
   }
