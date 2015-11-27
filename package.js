@@ -8,14 +8,6 @@ Package.describe({
 
 Package.onUse(function (api) {
     api.versionsFrom('0.9.0');
-    api.use('ecmascript');
-    api.addFiles('version-compare.js');
+    api.addFiles('dist/version-compare.js');
     api.export('versionCompare');
-});
-
-Package.onTest(function (api) {
-    api.use('ecmascript');
-    api.use('tinytest');
-    api.use('mys:version-compare');
-    api.addFiles('version-compare-tests.js');
 });

@@ -1,4 +1,4 @@
-class versionCompareC {
+class versionCompare {
 
     /**
      * First greater then second
@@ -6,8 +6,8 @@ class versionCompareC {
      * @param {string} second
      * @returns {boolean}
      */
-    gt(first, second) {
-        return this.compare(first, '>', second);
+    static gt(first, second) {
+        return versionCompare.compare(first, '>', second);
     }
 
     /**
@@ -16,8 +16,8 @@ class versionCompareC {
      * @param {string} second
      * @returns {boolean}
      */
-    gte(first, second) {
-        return !this.lt(first, second);
+    static gte(first, second) {
+        return !versionCompare.lt(first, second);
     }
 
     /**
@@ -26,8 +26,8 @@ class versionCompareC {
      * @param {string} second
      * @returns {boolean}
      */
-    lt(first, second) {
-        return this.compare(first, '<', second);
+    static lt(first, second) {
+        return versionCompare.compare(first, '<', second);
     }
 
     /**
@@ -36,8 +36,8 @@ class versionCompareC {
      * @param {string} second
      * @returns {boolean}
      */
-    lte(first, second) {
-        return !this.gt(first, second);
+    static lte(first, second) {
+        return !versionCompare.gt(first, second);
     }
 
     /**
@@ -46,8 +46,8 @@ class versionCompareC {
      * @param {string} second
      * @returns {boolean}
      */
-    eq(first, second) {
-        return this.compare(first, '=', second);
+    static eq(first, second) {
+        return versionCompare.compare(first, '=', second);
     }
 
     /**
@@ -57,8 +57,8 @@ class versionCompareC {
      * @param {string} second
      * @returns {boolean}
      */
-    compare(first, operator, second) {
-        const {a, b} = this.parse(first, second);
+    static compare(first, operator, second) {
+        const {a, b} = versionCompare.parse(first, second);
 
         switch (operator) {
             case '=':
@@ -78,7 +78,7 @@ class versionCompareC {
      * @param {string} b
      * @returns {Object|undefined}
      */
-    parse(a, b) {
+    static parse(a, b) {
         if (typeof a + typeof b !== 'stringstring') {
             return undefined;
         }
@@ -117,4 +117,4 @@ class versionCompareC {
     }
 }
 
-versionCompare = new versionCompareC;
+export default versionCompare;
