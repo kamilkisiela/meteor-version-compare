@@ -1,14 +1,14 @@
 meteorVersionCompare = {
-    gt(version) {
+    gt: function (version) {
         return versionCompare.gt(Meteor.release, version);
     },
-    gte(version) {
+    gte: function (version) {
         return versionCompare.gte(Meteor.release, version);
     },
-    lt(version) {
+    lt: function (version) {
         return versionCompare.lt(Meteor.release, version);
     },
-    lte(version) {
+    lte: function (version) {
         return versionCompare.lte(Meteor.release, version);
     }
 };

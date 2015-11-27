@@ -8,7 +8,6 @@ Package.describe({
 
 Package.onUse(function (api) {
     api.versionsFrom('METEOR@1.0');
-    api.use('ecmascript');
     api.addFiles('dist/meteor-version-compare.js');
     api.export('meteorVersionCompare');
 });
