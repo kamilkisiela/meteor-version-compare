@@ -1,4 +1,4 @@
-import {versionCompare} from '../src/index';
+import versionCompare from '../src/index';
 
 class parseTest {
 

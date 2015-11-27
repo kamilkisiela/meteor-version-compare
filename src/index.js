@@ -1,4 +1,4 @@
-export class versionCompare {
+export default class versionCompare {
 
     /**
      * First greater then second
