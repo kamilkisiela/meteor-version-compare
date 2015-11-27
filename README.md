@@ -1,6 +1,10 @@
 versionCompare
 ==========
 
+[![Build Status](https://travis-ci.org/kamilkisiela/version-compare.svg?branch=master)](https://travis-ci.org/kamilkisiela/version-compare)
+[![codecov.io](https://codecov.io/github/kamilkisiela/version-compare/coverage.svg?branch=master)](https://codecov.io/github/kamilkisiela/version-compare?branch=master)
+[![Codacy Badge](https://api.codacy.com/project/badge/grade/3a3da42a24b043a4b0d9ffa5b342a4fd)](https://www.codacy.com/app/mys-sterowiec/version-compare)
+
 Compare semantic versions or get them as integers.
 
 ## API
