@@ -7,7 +7,8 @@
   "scripts": {
     "build:dist": "webpack --progress --colors --set-env-NODE_ENV=development",
     "build:prod": "webpack --progress --colors --set-env-NODE_ENV=production",
-    "build": "npm run build:dist & npm run build:prod",
+    "build:meteor": "gulp build:meteor",
+    "build": "npm run build:dist & npm run build:prod & npm run build:meteor",
     "coverage:codecov": "cat ./coverage/lcov.info | node_modules/.bin/codecov",
     "coverage:coveralls": "cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js",
     "coverage:codacy": "cat ./coverage/lcov.info | ./node_modules/.bin/codacy-coverage",
@@ -32,6 +33,8 @@
     "codacy-coverage": "^1.1.3",
     "codecov.io": "^0.1.6",
     "coveralls": "^2.11.4",
+    "gulp": "^3.9.0",
+    "gulp-concat": "^2.6.0",
     "isparta": "^4.0.0",
     "isparta-loader": "1.0.0",
     "jasmine-core": "^2.3.4",
