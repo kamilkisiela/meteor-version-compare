@@ -1,15 +1,3 @@
-/*var webpack = require('./webpack.config');
-
- var coverage = process.env.COVERAGE === true;
- var files = [webpack.entry];
- var preprocessors = {};
- var reporters = ['progress'];
-
- if (coverage) {
- reporters.push('coverage');
- }
- preprocessors[webpack.entry] = ['webpack'];*/
-var path = require('path');
 var webpack = require('./webpack/config').test;
 
 module.exports = function (config) {

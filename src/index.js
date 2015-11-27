@@ -1,4 +1,4 @@
-class versionCompare {
+export class versionCompare {
 
     /**
      * First greater then second
@@ -100,13 +100,21 @@ class versionCompare {
         let i = 0;
 
         // add missing splits (as string!)
-        while (a.length < len) a.push("0");
-        while (b.length < len) b.push("0");
+        while (a.length < len) {
+            a.push("0");
+        }
+        while (b.length < len) {
+            b.push("0");
+        }
 
         // add leading zeros
         for (i = 0; i < len; i++) {
-            while (b[i].length < a[i].length) b[i] = "0" + b[i];
-            while (a[i].length < b[i].length) a[i] = "0" + a[i];
+            while (b[i].length < a[i].length) {
+                b[i] = "0" + b[i];
+            }
+            while (a[i].length < b[i].length) {
+                a[i] = "0" + a[i];
+            }
         }
 
         // output as integers
@@ -116,5 +124,3 @@ class versionCompare {
         };
     }
 }
-
-export default versionCompare;

@@ -1,4 +1,58 @@
-import versionCompare from '../src/index';
+import {versionCompare} from '../src/index';
+
+class parseTest {
+
+    constructor() {
+        this.stack = [];
+    }
+
+    /**
+     *
+     * @param {string} a
+     * @param {string} ae
+     * @param {string} b
+     * @param {string} be
+     */
+    add(a, ae, b, be) {
+        this.stack.push({
+            a: a,
+            b: b,
+            expected: {
+                a: parseInt(ae.replace(/\./g, "")),
+                b: parseInt(be.replace(/\./g, ""))
+            }
+        });
+    }
+
+    test() {
+        this.stack.forEach((v) => {
+            expect(versionCompare.parse(v.a, v.b)).toEqual({
+                a: v.expected.a,
+                b: v.expected.b
+            });
+        });
+    }
+}
+
+class compareTest {
+    constructor() {
+        this.stack = [];
+    }
+
+    add(a, b, result) {
+        this.stack.push({
+            a: a,
+            b: b,
+            result: result
+        });
+    }
+
+    test(comparer) {
+        this.stack.forEach((v) => {
+            expect(comparer.call(undefined, v.a, v.b)).toBe(v.result);
+        });
+    }
+}
 
 describe("versionCompare", () => {
     it("should be defined", () => {
@@ -164,57 +218,3 @@ describe("versionCompare", () => {
         });
     });
 });
-
-class parseTest {
-
-    constructor() {
-        this.stack = [];
-    }
-
-    /**
-     *
-     * @param {string} a
-     * @param {string} ae
-     * @param {string} b
-     * @param {string} be
-     */
-    add(a, ae, b, be) {
-        this.stack.push({
-            a: a,
-            b: b,
-            expected: {
-                a: parseInt(ae.replace(/\./g, "")),
-                b: parseInt(be.replace(/\./g, ""))
-            }
-        });
-    }
-
-    test() {
-        this.stack.forEach((v) => {
-            expect(versionCompare.parse(v.a, v.b)).toEqual({
-                a: v.expected.a,
-                b: v.expected.b
-            });
-        });
-    }
-}
-
-class compareTest {
-    constructor() {
-        this.stack = [];
-    }
-
-    add(a, b, result) {
-        this.stack.push({
-            a: a,
-            b: b,
-            result: result
-        });
-    }
-
-    test(comparer) {
-        this.stack.forEach((v) => {
-            expect(comparer.call(undefined, v.a, v.b)).toBe(v.result);
-        });
-    }
-}
